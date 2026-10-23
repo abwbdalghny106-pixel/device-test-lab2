@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مختبر اختبار الجهاز</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #101820;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+    .card {
+      background: #202c38;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+    }
+    pre {
+      direction: ltr;
+      text-align: left;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    button {
+      padding: 12px;
+      border-radius: 8px;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>مختبر اختبار الجهاز</h2>
+    <p>صفحة تعليمية لعرض معلومات المتصفح.</p>
+    <button onclick="showInfo()">عرض المعلومات</button>
+    <pre id="info"></pre>
+  </div>
+
+  <script>
+    function showInfo() {
+      const data = {
+        browser: navigator.userAgent,
+        language: navigator.language,
+        platform: navigator.platform,
+        screen: screen.width + " × " + screen.height
+      };
+
+      document.getElementById("info").textContent =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
